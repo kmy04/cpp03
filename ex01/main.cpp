@@ -4,7 +4,7 @@ int main() {
     // virtual 키워드 테스트
 	std::cout << "virtual 키워드 테스트" << std::endl;
 	ClapTrap* ptr = new ScavTrap("Scavvy");
-	delete ptr;  // ScavTrap 소멸자 -> ClapTrap 소멸자 호출
+	
 	std::cout << std::endl;
 
 
@@ -19,11 +19,13 @@ int main() {
 	std::cout << std::endl;
     
     std::cout << "기능 테스트" << std::endl;
-    scav2.attack("target");
-    scav2.guardGate();
+	ptr->attack("target1");
+	scav1.attack("target2");
+	scav1.guardGate();
 	std::cout << std::endl;
 
 	std::cout << "소멸자 테스트" << std::endl;
+	delete ptr;  // ScavTrap 소멸자 -> ClapTrap 소멸자 호출
     
     return 0;
 }
